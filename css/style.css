@@ -1,6 +1,7 @@
 body{
   background-image: url(/Users/DharmaVelasco/code/first-project/img/baby.jpg);
   background-size: 100%;
+  background-repeat: no-repeat;
 
 }
 
@@ -10,11 +11,11 @@ h2 {
   font-size: 500%;
 }
 
-img{
+/*img{
   float: right;
   margin-right: -2%;
   margin-top: 5%;
-}
+}*/
 h1 {
   float: right;
   margin-right: 8px;
@@ -23,7 +24,10 @@ h1 {
 
 canvas {
   border: 2px solid black;
-  margin: -8% 10%;
+  float: left;
+  display: inline;
+  margin: -40% 42%;
+  background-color: skyblue;
 }
 
 .main-baby {
@@ -32,4 +36,10 @@ canvas {
 
 .bottle2 {
   display: none;
+}
+
+.littleboss {
+  float: left;
+  margin-top: -10%;
+  display: inline;
 }
