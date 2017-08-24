@@ -119,7 +119,7 @@ function draw(){
          bottleCounter--;
          bottleCounter--;
          bottleTimes++;
-         gameOver();
+
        } // if closing
 
        else if (mainBabyX + 60 > collide.x && mainBabyX + 60 < collide.x + 60 && mainBabyY > collide.y && mainBabyY < collide.y + 60) {
@@ -127,10 +127,10 @@ function draw(){
           bottleCounter--;
           bottleCounter--;
           bottleTimes++;
-          gameOver();
+
        }// else if closing
 
-
+          gameOver();
    } // for closing
 
    drawScore();
