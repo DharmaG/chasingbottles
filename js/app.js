@@ -42,6 +42,10 @@ function draw(){
 
   context.clearRect(0, 0, canvas.width, canvas.height);
 
+  background = new Image();
+  background.src = './img/background.jpg';
+  context.drawImage(background, -10, 0, 800, 550);
+
   woodFloor = new Image();
   woodFloor.src = './img/woodenfloor.jpg';
   context.drawImage(woodFloor, 0, 500, 1050, 150);
