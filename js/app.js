@@ -27,19 +27,24 @@ document.addEventListener('keydown',keycodeCommands, false);
 var imgDrop;
 var bottleX = 0; // x
 var bottleY = 0; // y
-var noBottles = 5;
+var noBottles = 3;
 var fallingBottles1 = [];
 var bottleImageReady = false;
 var bottleCounter = 0;
-var infectedBottles = 1;
+var infectedBottles = 3;
 var fallingInfected = [];
 var infectedBottlesReady = false;
 var taking = document.getElementsByClassName('counter').innerHTML;
+var gameEnded = false;
+var bottleTimes = 0;
 
 function draw(){
 
   context.clearRect(0, 0, canvas.width, canvas.height);
 
+  woodFloor = new Image();
+  woodFloor.src = './img/woodenfloor.jpg';
+  context.drawImage(woodFloor, 0, 500, 1050, 150);
 
   base_image = new Image();
   base_image.src = './img/main.png';
@@ -89,7 +94,7 @@ function draw(){
 // detecting collision for regular bottles
    for(i = 0; i < fallingBottles1.length; i++){
        var collide = fallingBottles1[i];
-       if(mainBabyX > collide.x && mainBabyX < collide.x + 100 && mainBabyY > collide.y && mainBabyY < collide.y + 100){
+       if(mainBabyX > collide.x && mainBabyX < collide.x + 60 && mainBabyY > collide.y && mainBabyY < collide.y + 60){
          fallingBottles1.splice(i , 1);
          bottleCounter++;
        } // if closing
@@ -105,20 +110,35 @@ function draw(){
 // detecting collision for infected bottles
    for(i = 0; i < fallingInfected.length; i++){
        var collide = fallingInfected[i];
-       if(mainBabyX > collide.x && mainBabyX < collide.x + 100 && mainBabyY > collide.y && mainBabyY < collide.y + 100){
+       if(mainBabyX > collide.x && mainBabyX < collide.x + 70 && mainBabyY > collide.y && mainBabyY < collide.y + 70){
          fallingInfected.splice(i , 1);
          bottleCounter--;
          bottleCounter--;
+         bottleTimes++;
+         gameOver();
        } // if closing
 
        else if (mainBabyX + 60 > collide.x && mainBabyX + 60 < collide.x + 60 && mainBabyY > collide.y && mainBabyY < collide.y + 60) {
           fallingInfected.splice(i , 1);
           bottleCounter--;
           bottleCounter--;
+          bottleTimes++;
+          gameOver();
        }// else if closing
 
+
    } // for closing
+
    drawScore();
+ }
+
+
+ function gameOver(){
+   console.log({bottleTimes, gameEnded})
+    if(bottleTimes == 3 && gameEnded === false){
+        $('.modal').modal('show');
+        gameEnded = true;
+    }
  }
 
 
@@ -138,7 +158,7 @@ function setup(){
      bottle['image']= bottleImage
      bottle['x'] = Math.random() * canvas.width;
      bottle['y'] = Math.random() * -100;
-     bottle['speed'] = .09;
+     bottle['speed'] = .35;
      console.log(bottle['speed']);
      fallingBottles1.push(bottle);
 
@@ -155,14 +175,14 @@ function setup(){
         infectedBottlesReady = true;
     };
 
-    setInterval(draw, 1);
+    setInterval(draw, 5);
 
-    for (i = 0; i < noBottles; i++){
+    for (i = 0; i < 1; i++){
       var infect  = new Object();
      infect['image']= infectedBottles
      infect['x'] = Math.random() * canvas.width;
      infect['y'] = Math.random() * -100;
-     infect['speed'] = .09;
+     infect['speed'] = .35;
      fallingInfected.push(infect);
 
 

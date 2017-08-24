@@ -1,5 +1,5 @@
 body{
-  background-image: url(/Users/DharmaVelasco/code/first-project/img/baby.jpg);
+  background-image: url(../img/baby.jpg);
   background-size: 100%;
   background-repeat: no-repeat;
 
@@ -11,23 +11,23 @@ h2 {
   font-size: 500%;
 }
 
-/*img{
-  float: right;
-  margin-right: -2%;
-  margin-top: 5%;
-}*/
 h1 {
   float: right;
   margin-right: 8px;
   margin-top: 6%;
+}
+.btngroup {
+  width: 30%;
+  margin-left: 2%;
+  background-color: rgba(255,255,255,.09);
 }
 
 canvas {
   border: 2px solid black;
   float: left;
   display: inline;
-  margin: -40% 42%;
-  background-color: skyblue;
+  margin: -38% 42%;
+  background-color: #8AD5FE;
 }
 
 .main-baby {
@@ -42,4 +42,18 @@ canvas {
   float: left;
   margin-top: -10%;
   display: inline;
+}
+.bottle {
+  display: none;
+}
+
+.modalgrande {
+  display: inline;
+  overflow: auto;
+}
+
+.gameoverbaby {
+  width: 80%;
+  height: 80%;
+  margin-left: 7%;
 }
