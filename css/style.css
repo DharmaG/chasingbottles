@@ -5,28 +5,66 @@ body{
 
 }
 
-h2 {
-  font-family: chalkduster;
-  text-align: center;
-  font-size: 500%;
-}
-
 h1 {
   float: right;
   margin-right: 8px;
   margin-top: 6%;
 }
+
+h2 {
+  font-family: Shadows into light;
+  text-align: center;
+  font-size: 900%;
+  color: #39BD6D;
+  font-weight: bold;
+  margin-top: 2%;
+}
+
+h4 {
+  text-align: center;
+  font-family: Shadows into light;
+  font-size: 400%;
+  color: #39BD6D;
+}
+
+.instruccions {
+  float: left;
+  margin-left: 3%;
+  position: absolute;
+  left: 3.5%;
+  top: 30%;
+  width: 20%;
+  height: 8%;
+}
+
+p {
+  display: inline-block;
+  font-family: Shadows into light;
+  font-size: 200%;
+}
+
+.infected {
+  margin-left: 65%;
+  margin-top: -30%;
+}
+
+
 .btngroup {
   width: 30%;
   margin-left: 2%;
-  background-color: rgba(255,255,255,.09);
+
+}
+
+.startButtons {
+    background-color: #FFFFE5;
+    border: none;
 }
 
 canvas {
   border: 2px solid black;
   float: left;
   display: inline;
-  margin: -38% 42%;
+  margin: -39% 42%;
   background-color: #8AD5FE;
 }
 
@@ -38,10 +76,16 @@ canvas {
   display: none;
 }
 
+.instructions {
+  width: 50%;
+  height: 50%;
+}
+
 .littleboss {
   float: left;
   margin-top: -10%;
   display: inline;
+
 }
 .bottle {
   display: none;
